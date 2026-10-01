@@ -1,0 +1,117 @@
+/* vibe.Ag — perfil. Estructura primero, CSS después. */
+:root {
+  --fondo: #ffffff;
+  --texto: #0f1419;
+  --gris: #536471;
+  --borde: #cfd9de;
+  --azul: #1d9bf0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+svg {
+  width: 24px; height: 24px; fill: none; stroke: currentColor;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+.pagina { max-width: 600px; margin: 0 auto; padding-bottom: 80px; }
+
+.cabecera { position: relative; height: 190px; }
+.cabecera__fondo { height: 120px; background: linear-gradient(#e6e6e6, #b9b9b9); }
+
+.cabecera__foto,
+.post__avatar { border-radius: 50%; object-fit: cover; }
+
+.cabecera__foto {
+  position: absolute; left: 12px; bottom: 0;
+  width: 90px; height: 90px; border: 4px solid var(--fondo);
+}
+
+.info { padding: 12px 16px 0; }
+.info__nombre { display: flex; align-items: center; gap: 10px; }
+.nombre { font-size: 20px; font-weight: 800; }
+
+.verificacion {
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px 12px; background: none;
+  border: 1px solid var(--borde); border-radius: 999px;
+  font-weight: 700; font-size: 15px;
+}
+
+.verificacion__icono {
+  display: grid; place-items: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--azul); color: #fff; font-size: 11px;
+}
+
+.usuario { color: var(--gris); font-size: 15px; }
+.bio { margin-top: 12px; font-size: 15px; }
+
+.info__extra {
+  list-style: none; display: flex; flex-wrap: wrap;
+  gap: 4px 16px; margin-top: 10px; color: var(--gris); font-size: 15px;
+}
+.info__extra li { display: flex; align-items: center; gap: 4px; }
+.info__extra svg { width: 18px; height: 18px; }
+
+.estadisticas { display: flex; gap: 18px; padding: 12px 16px; color: var(--gris); font-size: 15px; }
+.estadisticas strong { color: var(--texto); }
+
+.acciones { display: flex; gap: 10px; padding: 4px 16px 16px; }
+.boton {
+  flex: 1; padding: 10px; background: var(--fondo);
+  border: 1px solid var(--borde); border-radius: 999px;
+  font-size: 16px; font-weight: 700;
+}
+
+.pestanas {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 16px; border-bottom: 1px solid #eff3f4;
+}
+.pestana {
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px 8px; color: var(--gris); font-weight: 700; font-size: 17px;
+}
+.pestana--activa { color: var(--texto); border-bottom: 4px solid var(--texto); padding: 14px 24px 10px; }
+.pestana .flecha { width: 16px; height: 16px; }
+
+.post { padding: 12px 16px; }
+.post__fijada { margin-left: 40px; color: var(--gris); font-size: 13px; font-weight: 700; }
+.post__cuerpo { display: flex; gap: 10px; margin-top: 4px; }
+.post__avatar { width: 40px; height: 40px; flex-shrink: 0; }
+.post__contenido { flex: 1; font-size: 15px; line-height: 1.35; }
+.post__cabecera { display: flex; justify-content: space-between; }
+.gris { color: var(--gris); }
+.post__respuesta { color: var(--gris); }
+.post__respuesta a { color: var(--azul); }
+.post__texto { margin-top: 12px; }
+.post__media { margin-top: 12px; height: 260px; background: #3a3d43; border-radius: 16px; }
+
+.flotante {
+  position: fixed; right: 20px; bottom: 84px;
+  width: 56px; height: 56px; border: none; border-radius: 50%;
+  background: var(--azul); color: #fff; font-size: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.barra-inferior {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  display: flex; justify-content: space-around;
+  padding: 12px 0 20px; background: var(--fondo); border-top: 1px solid #eff3f4;
+}
+.barra-inferior svg { width: 28px; height: 28px; }
+.barra-inferior .activo { position: relative; }
+.barra-inferior .activo::after {
+  content: ""; position: absolute; top: -2px; right: -4px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--azul);
+}
+.relleno { fill: currentColor; }
